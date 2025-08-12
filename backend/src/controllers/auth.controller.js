@@ -3,49 +3,6 @@ import bcrypt from "bcrypt";
 import { generateTokens } from "../lib/utils.js";
 import cloudinary from "../lib/cloudinary.js";
 import jwt from "jsonwebtoken";
-// export const signup = async (req, res) => {
-//     const { fullName, email, password } = req.body;
-
-//     try {
-//         if (!fullName || !email || !password) {
-//             return res.status(400).json({ message: "All fields are required" });
-//         }
-
-//         if (password.length < 6) {
-//             return res.status(400).json({ message: "Password must be at least 6 characters long" });
-//         }
-
-//         const existingUser = await User.findOne({ email });
-//         if (existingUser) {
-//             return res.status(400).json({ message: "User already exists" });
-//         }
-
-//         const salt = await bcrypt.genSalt(10);
-//         const hashedPassword = await bcrypt.hash(password, salt);
-
-//         const newUser = new User({
-//             fullName,
-//             email,
-//             password: hashedPassword,
-//         });
-
-//         await newUser.save(); // Save first
-
-//         generateTokens(newUser._id, res); // Then generate tokens
-
-//         res.status(201).json({
-//             _id: newUser._id,
-//             fullName: newUser.fullName,
-//             email: newUser.email,
-//             profilePic: newUser.profilePic,
-//         });
-
-//     } catch (error) {
-//         console.error("Signup Error:", error.message);
-//         res.status(500).json({ message: "Internal server error" });
-//     }
-// };
-
 export const signup = async (req, res) => {
   const { fullName, email, password } = req.body;
 
