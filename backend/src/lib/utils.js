@@ -6,7 +6,7 @@ export const generateTokens=(userId, res)=>{
         httpOnly:true,
         maxAge:7*24*60*60*1000 ,
         sameSite:"strict", 
-        secure: process.env.NODE_ENV!== "development" // Set to true in production
+        secure: true // Set to true in production
       })
       return token;
 }
